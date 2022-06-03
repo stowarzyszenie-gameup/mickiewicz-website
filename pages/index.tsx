@@ -2,12 +2,19 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { ThemeContext, ThemeContextType } from "../context/theme";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   const { isFontLarge, setIsFontLarge, isMonochrome, setIsMonochrome } =
     useContext(ThemeContext) as ThemeContextType;
+  const { t, i18n } = useTranslation();
+
+  const switchLanguage = () =>
+    i18n.language === "en"
+      ? i18n.changeLanguage("pl")
+      : i18n.changeLanguage("en");
 
   return (
     <div
@@ -30,11 +37,9 @@ const Home: NextPage = () => {
         <button onClick={() => setIsFontLarge(!isFontLarge)}>
           Switch font size
         </button>
+        <button onClick={() => switchLanguage()}>Switch to polish</button>
 
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
+        <p className={styles.description}>{t("testText")}</p>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
