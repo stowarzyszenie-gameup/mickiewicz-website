@@ -1,18 +1,18 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
+import { useContext } from "react";
+import { ThemeContext, ThemeContextType } from "../context/theme";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  const [darkMode, setDarkMode] = useState(false);
-  //TODO: move this to _document?
-  const [isLargerFont, setIsLargerFont] = useState(false);
+  const { isFontLarge, setIsFontLarge, isMonochrome, setIsMonochrome } =
+    useContext(ThemeContext) as ThemeContextType;
 
   return (
     <div
-      className={darkMode ? "dark" : ""}
-      style={isLargerFont ? { fontSize: "20px" } : {}}
+      className={isMonochrome ? "dark" : ""}
+      style={isFontLarge ? { fontSize: "20px" } : {}}
     >
       <Head>
         <title>Create Next App</title>
@@ -24,10 +24,10 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-        <button onClick={() => setDarkMode(!darkMode)}>
+        <button onClick={() => setIsMonochrome(!isMonochrome)}>
           Switch to dark mode
         </button>
-        <button onClick={() => setIsLargerFont(!isLargerFont)}>
+        <button onClick={() => setIsFontLarge(!isFontLarge)}>
           Switch font size
         </button>
 
@@ -67,7 +67,7 @@ const Home: NextPage = () => {
         </div>
       </main>
 
-      <footer className={styles.footer}>
+      <footer className="bg-white dark:bg-gray-400">
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
