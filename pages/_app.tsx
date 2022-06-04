@@ -5,6 +5,10 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import enTranslations from "../locales/en/common.json";
 import plTranslations from "../locales/pl/common.json";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import Layout from "../components/Layout/indext";
+config.autoAddCss = false;
 
 const resources = {
   en: {
@@ -28,7 +32,9 @@ i18n.use(initReactI18next).init({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ThemeProvider>
   );
 }
