@@ -1,7 +1,54 @@
-import React from "react";
+import Link from "next/link";
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import NavLink from "./NavLink";
 
 const Navbar = () => {
-  return <div>Navbar</div>;
+  const { t } = useTranslation();
+  const [showMenu, setShowMenu] = useState(false);
+
+  return (
+    <header className="flex sm:flex-col items-center justify-between fixed w-full bg-white h-20">
+      <div>LOGO</div>
+      <button
+        data-collapse-toggle="navbar-default"
+        type="button"
+        className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-default"
+        aria-expanded="false"
+        onClick={() => setShowMenu(!showMenu)}
+      >
+        <span className="sr-only">Open main menu</span>
+        <svg
+          className="w-6 h-6"
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clipRule="evenodd"
+          ></path>
+        </svg>
+      </button>
+      <nav
+        className={`${
+          showMenu ? "fixed top-8" : "hidden"
+        } w-full sm:top-0 sm:relative sm:block sm:w-auto`}
+        id="navbar-default"
+      >
+        <ul className="flex flex-col items-center p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 sm:flex-row sm:space-x-8 sm:mt-0 sm:text-sm sm:font-medium sm:border-0 sm:bg-white dark:bg-gray-800 sm:dark:bg-gray-900 dark:border-gray-700">
+          <NavLink href="/#ballads" title={t("gameName")} />
+          <NavLink href="/#project" title={t("projectHeader")} />
+          <NavLink href="/#game" title={t("gameHeader")} />
+          <NavLink href="/#didacticHelp" title={t("didacticHelpHeader")} />
+          <NavLink href="/#help" title={t("contactHeader")} />
+        </ul>
+      </nav>
+    </header>
+  );
 };
 
 export default Navbar;

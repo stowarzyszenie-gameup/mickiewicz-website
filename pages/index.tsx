@@ -15,6 +15,16 @@ const Home: NextPage = () => {
 
       <main className="flex flex-col gap-4 h-screen">
         <p className="text-center">{t("testText")}</p>
+        {(t("project", { returnObjects: true }) as string[]).map(
+          (item, index) => (
+            <p
+              key={index}
+              dangerouslySetInnerHTML={{
+                __html: item,
+              }}
+            ></p>
+          )
+        )}
       </main>
     </div>
   );
