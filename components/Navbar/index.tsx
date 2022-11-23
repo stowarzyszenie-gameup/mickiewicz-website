@@ -1,19 +1,40 @@
+import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { ThemeContext, ThemeContextType } from "../../context/theme";
 import NavLink from "./NavLink";
 
 const Navbar = () => {
   const { t } = useTranslation();
   const [showMenu, setShowMenu] = useState(false);
+  const { isFontLarge, isMonochrome } = useContext(
+    ThemeContext
+  ) as ThemeContextType;
 
   return (
-    <header className="flex sm:flex-col items-center justify-between fixed w-full bg-white h-20">
-      <div>LOGO</div>
+    <header className="flex sm:flex-col items-center justify-between fixed w-full bg-white h-28 sm:h-40 dark:bg-black text-black dark:text-white">
+      <Link href="/">
+        {isMonochrome ? (
+          <Image
+            src="/images/logos/logo_white.png"
+            width={200}
+            height={100}
+            alt="Ballads and romances logo"
+          />
+        ) : (
+          <Image
+            src="/images/logos/logo_black.png"
+            width={200}
+            height={100}
+            alt="Ballads and romances logo"
+          />
+        )}
+      </Link>
       <button
         data-collapse-toggle="navbar-default"
         type="button"
-        className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        className="inline-flex items-center p-2 ml-3 text-sm text-black dark:text-white rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600"
         aria-controls="navbar-default"
         aria-expanded="false"
         onClick={() => setShowMenu(!showMenu)}
@@ -35,11 +56,11 @@ const Navbar = () => {
       </button>
       <nav
         className={`${
-          showMenu ? "fixed top-8" : "hidden"
+          showMenu ? "fixed top-20" : "hidden"
         } w-full sm:top-0 sm:relative sm:block sm:w-auto`}
         id="navbar-default"
       >
-        <ul className="flex flex-col items-center p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 sm:flex-row sm:space-x-8 sm:mt-0 sm:text-sm sm:font-medium sm:border-0 sm:bg-white dark:bg-gray-800 sm:dark:bg-gray-900 dark:border-gray-700">
+        <ul className="flex flex-col items-center p-4 mt-4 sm:flex-row sm:space-x-8 sm:mt-0 sm:text-sm sm:font-medium bg-white dark:bg-black">
           <NavLink href="/#ballads" title={t("gameName")} />
           <NavLink href="/#project" title={t("projectHeader")} />
           <NavLink href="/#game" title={t("gameHeader")} />
