@@ -13,7 +13,7 @@ const Navbar = () => {
   ) as ThemeContextType;
 
   return (
-    <header className="flex sm:flex-col items-center justify-between fixed w-full bg-white h-28 sm:h-40 dark:bg-black text-black dark:text-white">
+    <header className="flex sm:flex-col items-center justify-between fixed w-full bg-primary h-28 sm:h-40 dark:bg-primaryDark text-black dark:text-white px-4">
       <Link href="/">
         {isMonochrome ? (
           <Image
@@ -34,7 +34,7 @@ const Navbar = () => {
       <button
         data-collapse-toggle="navbar-default"
         type="button"
-        className="inline-flex items-center p-2 ml-3 text-sm text-black dark:text-white rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600"
+        className="inline-flex items-center p-2 ml-3 text-sm text-black dark:text-white rounded-lg sm:hidden hover:bg-secondary dark:hover:bg-secondaryDark focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600"
         aria-controls="navbar-default"
         aria-expanded="false"
         onClick={() => setShowMenu(!showMenu)}
@@ -56,11 +56,11 @@ const Navbar = () => {
       </button>
       <nav
         className={`${
-          showMenu ? "fixed top-20" : "hidden"
+          showMenu ? "fixed top-20 left-0" : "hidden"
         } w-full sm:top-0 sm:relative sm:block sm:w-auto`}
         id="navbar-default"
       >
-        <ul className="flex flex-col items-center p-4 mt-4 sm:flex-row sm:space-x-8 sm:mt-0 sm:text-sm sm:font-medium bg-white dark:bg-black">
+        <ul className="flex flex-col gap-4 sm:gap-2 items-center p-4 mt-4 sm:flex-row sm:space-x-8 sm:mt-0 sm:text-sm sm:font-medium bg-primary dark:bg-primaryDark">
           <NavLink href="/#ballads" title={t("gameName")} />
           <NavLink href="/#project" title={t("projectHeader")} />
           <NavLink href="/#game" title={t("gameHeader")} />
