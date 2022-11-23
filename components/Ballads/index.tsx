@@ -25,11 +25,11 @@ const Ballads = () => {
             )}
           </section> */}
         <section
-          className={`max-w-full  sm:h-auto w-full ${
+          className={`flex flex-col justify-center items-center max-w-full bg-[length:800px_600px] sm:bg-[length:contain] h-[600px] p-8 sm:h-auto w-full ${
             isFontLarge ? "sm:max-w-lg" : "sm:max-w-md"
           } ${
             isMonochrome ? "bg-paper-1-dark text-white" : "bg-paper-1"
-          } bg-contain bg-no-repeat bg-center p-24`}
+          } bg-no-repeat bg-center sm:p-24`}
         >
           {(t("project", { returnObjects: true }) as string[]).map(
             (item, index) => (
