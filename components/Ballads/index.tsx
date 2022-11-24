@@ -11,7 +11,7 @@ const Ballads = () => {
   return (
     <main
       className={`flex flex-col gap-4 h-auto font-serif prose ${
-        isFontLarge ? "prose-lg" : "prose-base"
+        isFontLarge ? "prose-lg sm:prose-xl" : "prose-base sm:prose-lg"
       } dark:prose-invert`}
     >
       <p className="text-center">{t("testText")}</p>
@@ -31,7 +31,7 @@ const Ballads = () => {
         <section
           id="ballads"
           className={`flex flex-col justify-center items-center max-w-full bg-[length:800px_600px] sm:bg-[length:contain] h-[600px] p-8 sm:h-auto w-full ${
-            isFontLarge ? "sm:max-w-lg" : "sm:max-w-md"
+            isFontLarge ? "sm:max-w-xl" : "sm:max-w-lg"
           } ${
             isMonochrome ? "bg-paper-1-dark text-white" : "bg-paper-1"
           } bg-no-repeat bg-center sm:p-24`}
