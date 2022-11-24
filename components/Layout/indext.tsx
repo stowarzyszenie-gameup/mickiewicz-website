@@ -50,7 +50,7 @@ const Layout = ({ children }: IProps) => {
           {i18n.language === "en" ? "PL" : "EN"}
         </button>
       </div>
-      <div className="flex flex-col lg:flex-row font-primary bg-secondary dark:bg-secondaryDark">
+      <div className="flex flex-col font-primary bg-secondary dark:bg-secondaryDark">
         <Navbar />
         <div className="w-full mt-28">
           <main>{children}</main>

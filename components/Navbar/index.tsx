@@ -13,7 +13,7 @@ const Navbar = () => {
   ) as ThemeContextType;
 
   return (
-    <header className="flex sm:flex-col items-center justify-between fixed w-full bg-primary h-28 sm:h-40 dark:bg-primaryDark text-black dark:text-white px-4">
+    <header className="flex sm:flex-col items-center justify-between w-full bg-primary h-28 sm:h-40 dark:bg-primaryDark text-black dark:text-white px-4">
       <Link href="/">
         {isMonochrome ? (
           <Image
