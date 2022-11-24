@@ -25,6 +25,7 @@ const Ballads = () => {
             )}
           </section> */}
         <section
+          id="ballads"
           className={`flex flex-col justify-center items-center max-w-full bg-[length:800px_600px] sm:bg-[length:contain] h-[600px] p-8 sm:h-auto w-full ${
             isFontLarge ? "sm:max-w-lg" : "sm:max-w-md"
           } ${
