@@ -27,7 +27,7 @@ const Layout = ({ children }: IProps) => {
 
   return (
     <div
-      className={isMonochrome ? "dark" : ""}
+      className={`${isMonochrome ? "dark" : ""} leading-normal`}
       style={isFontLarge ? { fontSize: "150%" } : { fontSize: "125%" }}
     >
       <div className="fixed right-0 top-1/2 flex flex-col gap-4 bg-slate-300 dark:bg-black dark:text-white w-12">

@@ -9,7 +9,11 @@ const Ballads = () => {
   ) as ThemeContextType;
 
   return (
-    <main className="flex flex-col gap-4 h-auto font-serif">
+    <main
+      className={`flex flex-col gap-4 h-auto font-serif prose ${
+        isFontLarge ? "prose-lg" : "prose-base"
+      } dark:prose-invert`}
+    >
       <p className="text-center">{t("testText")}</p>
       <div className="flex">
         {/* <section className="hidden max-w-full sm:max-w-sm sm:block bg-paper-1 bg-contain bg-no-repeat bg-center px-24">
@@ -35,7 +39,7 @@ const Ballads = () => {
           {(t("project", { returnObjects: true }) as string[]).map(
             (item, index) => (
               <p
-                className="text-justify mb-4"
+                className="text-left mb-4"
                 key={index}
                 dangerouslySetInnerHTML={{
                   __html: item,
