@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { ThemeContext, ThemeContextType } from "../../context/theme";
@@ -9,13 +10,9 @@ const Ballads = () => {
   ) as ThemeContextType;
 
   return (
-    <main
-      className={`flex flex-col gap-4 h-auto font-serif prose ${
-        isFontLarge ? "prose-lg sm:prose-xl" : "prose-base sm:prose-lg"
-      } dark:prose-invert`}
-    >
+    <main className={`flex flex-col gap-4 h-auto font-serif`}>
       <p className="text-center">{t("testText")}</p>
-      <div className="flex">
+      <section className="grid grid-cols-1 md:grid-cols-3">
         {/* <section className="hidden max-w-full sm:max-w-sm sm:block bg-paper-1 bg-contain bg-no-repeat bg-center px-24">
             {(t("project", { returnObjects: true }) as string[]).map(
               (item, index) => (
@@ -28,11 +25,21 @@ const Ballads = () => {
               )
             )}
           </section> */}
-        <section
+        <div className="hidden md:block">
+          <Image
+            src="/images/mickiewicz_lewy_color.png"
+            alt=""
+            width={700}
+            height={1200}
+          />
+        </div>
+        <div
           id="ballads"
-          className={`flex flex-col justify-center items-center max-w-full bg-[length:800px_600px] sm:bg-[length:contain] h-[600px] p-8 sm:h-auto w-full ${
-            isFontLarge ? "sm:max-w-xl" : "sm:max-w-lg"
-          } ${
+          className={`flex flex-col justify-center items-center max-w-full bg-[length:800px_600px] sm:bg-[length:contain] h-[600px] p-8 sm:h-auto w-full col-span-2 ${
+            isFontLarge ? "sm:max-w-xl md:max-w-2xl" : "sm:max-w-lg md:max-w-xl"
+          } prose ${
+            isFontLarge ? "prose-lg sm:prose-xl" : "prose-base sm:prose-lg"
+          } dark:prose-invert ${
             isMonochrome ? "bg-paper-1-dark text-white" : "bg-paper-1"
           } bg-no-repeat bg-center sm:p-24`}
         >
@@ -47,8 +54,8 @@ const Ballads = () => {
               ></p>
             )
           )}
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
   );
 };

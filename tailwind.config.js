@@ -22,6 +22,7 @@ module.exports = {
       backgroundImage: {
         "paper-1": "url('/images/paper_light_1.png')",
         "paper-1-dark": "url('/images/paper_dark_1.png')",
+        "mickiewicz-left": "url('/images/mickiewicz_lewy_color.png')",
       },
     },
   },
