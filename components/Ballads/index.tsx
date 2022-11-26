@@ -36,7 +36,7 @@ const Ballads = () => {
         ></p>
         <div className="w-full xl:w-2/3">
           <Image
-            src="/images/biblioteczka.png"
+            src="/images/biblioteczka.jpg"
             width={1920}
             height={1080}
             alt=""
@@ -49,7 +49,7 @@ const Ballads = () => {
           }}
         ></p>
         <div className="w-full xl:w-2/3">
-          <Image src="/images/switez.png" width={1920} height={1080} alt="" />
+          <Image src="/images/switez.jpg" width={1920} height={1080} alt="" />
         </div>
         <p
           className="text-left mb-4"
