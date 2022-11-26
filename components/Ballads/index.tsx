@@ -9,7 +9,10 @@ const Ballads = () => {
     ThemeContext
   ) as ThemeContextType;
   return (
-    <section className="bg-accent w-full font-serif">
+    <section
+      id="ballads"
+      className="bg-white w-full font-serif text-black flex flex-col items-center"
+    >
       <SectionHeader text={t("gameName")} />
       <div
         id="project"
@@ -32,6 +35,19 @@ const Ballads = () => {
             ></p>
           )
         )}
+        <p
+          className="text-left mb-0 w-full"
+          dangerouslySetInnerHTML={{ __html: t("balladsListTitle") }}
+        ></p>
+        <ul className="grid grid-cols-2 sm:grid-cols-3 text-sm list-none p-0 w-full">
+          {(t("balladsList", { returnObjects: true }) as string[]).map(
+            (item, index) => (
+              <li className="text-left mb-4" key={index}>
+                &ldquo;{item}&rdquo;
+              </li>
+            )
+          )}
+        </ul>
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ const Project = () => {
   ) as ThemeContextType;
 
   return (
-    <section className={`flex flex-col h-auto font-serif`}>
+    <section id="project" className={`flex flex-col h-auto font-serif`}>
       <SectionHeader text={t("projectHeader")} />
       <div className="grid grid-cols-1 md:grid-cols-3">
         <div className="hidden md:block">
@@ -24,7 +24,6 @@ const Project = () => {
           />
         </div>
         <div
-          id="project"
           className={`flex flex-col justify-start md:justify-center items-center max-w-full h-auto w-full col-span-2 ${
             isFontLarge ? "sm:max-w-xl md:max-w-2xl" : "sm:max-w-lg md:max-w-xl"
           } prose ${
