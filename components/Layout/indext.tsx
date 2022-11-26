@@ -52,7 +52,7 @@ const Layout = ({ children }: IProps) => {
       </div>
       <div className="flex flex-col font-primary bg-secondary dark:bg-secondaryDark">
         <Navbar />
-        <div className="w-full mt-28">
+        <div className="w-full">
           <main>{children}</main>
           <Footer />
         </div>
