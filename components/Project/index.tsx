@@ -14,7 +14,7 @@ const Project = () => {
     <section id="project" className={`flex flex-col h-auto font-serif`}>
       <SectionHeader text={t("projectHeader")} />
       <div className="grid grid-cols-1 md:grid-cols-3">
-        <div className="hidden md:block">
+        <div className="hidden md:flex">
           <Image
             className="h-full"
             src="/images/mickiewicz_lewy_color.png"
@@ -24,13 +24,17 @@ const Project = () => {
           />
         </div>
         <div
-          className={`flex flex-col justify-start md:justify-center items-center max-w-full h-auto w-full col-span-2 ${
-            isFontLarge ? "sm:max-w-xl md:max-w-2xl" : "sm:max-w-lg md:max-w-xl"
+          className={`flex flex-col justify-start md:justify-center items-start max-w-full h-auto w-full col-span-2 ${
+            isFontLarge
+              ? "sm:max-w-xl md:max-w-2xl xl:max-w-7xl"
+              : "sm:max-w-lg md:max-w-xl xl:max-w-6xl"
           } prose ${
-            isFontLarge ? "prose-lg sm:prose-xl" : "prose-base sm:prose-lg"
+            isFontLarge
+              ? "prose-lg sm:prose-xl lg:prose-2xl"
+              : "prose-base sm:prose-lg lg:prose-xl"
           } dark:prose-invert ${
             isMonochrome ? "text-white" : ""
-          } bg-no-repeat bg-center p-4 sm:p-0`}
+          } bg-no-repeat bg-center p-4 sm:p-0 self-center`}
         >
           {(t("project", { returnObjects: true }) as string[]).map(
             (item, index) => (

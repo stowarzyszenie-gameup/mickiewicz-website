@@ -30,7 +30,7 @@ const Layout = ({ children }: IProps) => {
       className={`${isMonochrome ? "dark" : ""} leading-normal`}
       style={isFontLarge ? { fontSize: "150%" } : { fontSize: "125%" }}
     >
-      <div className="fixed right-0 top-1/2 flex flex-col gap-4 bg-slate-300 dark:bg-black dark:text-white w-12">
+      <div className="fixed bottom-0 right-0 flex gap-4 bg-accent dark:bg-black dark:text-white">
         <button
           onClick={() => setIsMonochrome(!isMonochrome)}
           className="w-12 h-12"
