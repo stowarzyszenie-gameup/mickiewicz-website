@@ -12,7 +12,7 @@ const Project = () => {
   ) as ThemeContextType;
 
   return (
-    <section id="project" className={`flex flex-col h-auto font-serif`}>
+    <section id="project" className={`flex flex-col w-11/12 h-auto font-serif`}>
       <SectionHeader text={t("projectHeader")} />
       <div className="grid grid-cols-1 md:grid-cols-3">
         <div className="hidden md:flex">
