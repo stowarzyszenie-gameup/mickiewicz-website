@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { ThemeContext, ThemeContextType } from "../../context/theme";
+import Paragraph from "../Paragraph";
 import SectionHeader from "../SectionHeader";
 
 const Ballads = () => {
@@ -20,20 +21,11 @@ const Ballads = () => {
           isFontLarge
             ? "sm:max-w-xl md:max-w-2xl xl:max-w-7xl"
             : "sm:max-w-lg md:max-w-xl xl:max-w-6xl"
-        } prose ${
-          isFontLarge
-            ? "prose-lg sm:prose-xl lg:prose-2xl"
-            : "prose-base sm:prose-lg lg:prose-xl"
-        } dark:prose-invert ${
-          isMonochrome ? "text-white" : ""
         } bg-no-repeat bg-center p-4 sm:p-0`}
       >
-        <p
-          className="text-left mb-4"
-          dangerouslySetInnerHTML={{
-            __html: (t("ballads", { returnObjects: true }) as string[])[0],
-          }}
-        ></p>
+        <Paragraph
+          innerHtml={(t("ballads", { returnObjects: true }) as string[])[0]}
+        />
         <div className="w-full xl:w-2/3">
           <Image
             src="/images/biblioteczka.jpg"
@@ -42,25 +34,16 @@ const Ballads = () => {
             alt=""
           />
         </div>
-        <p
-          className="text-left mb-4"
-          dangerouslySetInnerHTML={{
-            __html: (t("ballads", { returnObjects: true }) as string[])[1],
-          }}
-        ></p>
+        <Paragraph
+          innerHtml={(t("ballads", { returnObjects: true }) as string[])[1]}
+        />
         <div className="w-full xl:w-2/3">
           <Image src="/images/switez.jpg" width={1920} height={1080} alt="" />
         </div>
-        <p
-          className="text-left mb-4"
-          dangerouslySetInnerHTML={{
-            __html: (t("ballads", { returnObjects: true }) as string[])[2],
-          }}
-        ></p>
-        <p
-          className="text-left mb-0 w-full"
-          dangerouslySetInnerHTML={{ __html: t("balladsListTitle") }}
-        ></p>
+        <Paragraph
+          innerHtml={(t("ballads", { returnObjects: true }) as string[])[2]}
+        />
+        <Paragraph innerHtml={t("balladsListTitle")} />
         <ul className="grid grid-cols-2 sm:grid-cols-3 list-none p-0 w-full">
           {(t("balladsList", { returnObjects: true }) as string[]).map(
             (item, index) => (

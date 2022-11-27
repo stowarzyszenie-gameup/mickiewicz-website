@@ -1,7 +1,14 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+import SectionHeader from "../SectionHeader";
 
 const Bibliography = () => {
-  return <div className="h-20 bg-primary w-full">Bibliography</div>;
+  const { t } = useTranslation();
+  return (
+    <section id="authors" className="bg-secondary w-full">
+      <SectionHeader text={t("bibliographyHeader")} />
+    </section>
+  );
 };
 
 export default Bibliography;

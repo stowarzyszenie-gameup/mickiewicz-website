@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { ThemeContext, ThemeContextType } from "../../context/theme";
+import Paragraph from "../Paragraph";
 import SectionHeader from "../SectionHeader";
 
 const Project = () => {
@@ -28,23 +29,11 @@ const Project = () => {
             isFontLarge
               ? "sm:max-w-xl md:max-w-2xl xl:max-w-7xl"
               : "sm:max-w-lg md:max-w-xl xl:max-w-6xl"
-          } prose ${
-            isFontLarge
-              ? "prose-lg sm:prose-xl lg:prose-2xl"
-              : "prose-base sm:prose-lg lg:prose-xl"
-          } dark:prose-invert ${
-            isMonochrome ? "text-white" : ""
           } bg-no-repeat bg-center p-4 sm:p-0 self-center`}
         >
           {(t("project", { returnObjects: true }) as string[]).map(
             (item, index) => (
-              <p
-                className="text-left mb-4"
-                key={index}
-                dangerouslySetInnerHTML={{
-                  __html: item,
-                }}
-              ></p>
+              <Paragraph innerHtml={item} key={index} />
             )
           )}
         </div>
