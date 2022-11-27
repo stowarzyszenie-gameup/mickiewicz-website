@@ -13,7 +13,7 @@ const Ballads = () => {
   return (
     <section
       id="ballads"
-      className="bg-white dark:bg-gray-600 w-full font-serif text-black flex flex-col items-center"
+      className="bg-accent dark:bg-gray-600 w-full font-serif text-black flex flex-col items-center"
     >
       <SectionHeader text={t("gameName")} />
       <div
@@ -44,7 +44,7 @@ const Ballads = () => {
           innerHtml={(t("ballads", { returnObjects: true }) as string[])[2]}
         />
         <Paragraph innerHtml={t("balladsListTitle")} />
-        <ul className="grid grid-cols-2 sm:grid-cols-3 list-none p-0 w-full">
+        <ul className="grid grid-cols-2 sm:grid-cols-3 list-none p-0 w-full prose">
           {(t("balladsList", { returnObjects: true }) as string[]).map(
             (item, index) => (
               <li

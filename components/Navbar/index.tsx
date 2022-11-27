@@ -1,35 +1,43 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ThemeContext, ThemeContextType } from "../../context/theme";
 import NavLink from "./NavLink";
 
 const Navbar = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [showMenu, setShowMenu] = useState(false);
-  const { isFontLarge, isMonochrome } = useContext(
-    ThemeContext
-  ) as ThemeContextType;
+  const { isMonochrome } = useContext(ThemeContext) as ThemeContextType;
+  const [currentLogo, setCurrentLogo] = useState(
+    "/images/logos/logo_black.webp"
+  );
+
+  useEffect(() => {
+    setCurrentLogo(selectProperLogo());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMonochrome, i18n.language]);
+
+  const selectProperLogo = () => {
+    if (isMonochrome) {
+      if (i18n.language === "en") {
+        return "/images/logos/logo_en_white.webp";
+      } else {
+        return "/images/logos/logo_white.webp";
+      }
+    } else {
+      if (i18n.language === "en") {
+        return "/images/logos/logo_en_black.webp";
+      } else {
+        return "/images/logos/logo_black.webp";
+      }
+    }
+  };
 
   return (
     <header className="flex sm:flex-col items-center justify-between w-full bg-primary h-28 sm:h-40 dark:bg-primaryDark text-black dark:text-white px-4">
       <Link href="/">
-        {isMonochrome ? (
-          <Image
-            src="/images/logos/logo_white.png"
-            width={200}
-            height={100}
-            alt="Ballads and romances logo"
-          />
-        ) : (
-          <Image
-            src="/images/logos/logo_black.png"
-            width={200}
-            height={100}
-            alt="Ballads and romances logo"
-          />
-        )}
+        <Image src={currentLogo} width={200} height={100} alt="logo" />
       </Link>
       <button
         data-collapse-toggle="navbar-default"
@@ -57,15 +65,35 @@ const Navbar = () => {
       <nav
         className={`${
           showMenu ? "fixed top-20 left-0" : "hidden"
-        } w-full sm:top-0 sm:relative sm:block sm:w-auto`}
+        } w-full sm:top-0 sm:relative sm:block sm:w-auto z-50`}
         id="navbar-default"
       >
         <ul className="flex flex-col gap-4 sm:gap-2 items-center p-4 mt-4 sm:flex-row sm:space-x-8 sm:mt-0 sm:text-sm sm:font-medium bg-primary dark:bg-primaryDark">
-          <NavLink href="/#ballads" title={t("gameName")} />
-          <NavLink href="/#project" title={t("projectHeader")} />
-          <NavLink href="/#game" title={t("gameHeader")} />
-          <NavLink href="/#didacticHelp" title={t("didacticHelpHeader")} />
-          <NavLink href="/#help" title={t("contactHeader")} />
+          <NavLink
+            href="/#ballads"
+            title={t("gameName")}
+            onClick={() => setShowMenu(false)}
+          />
+          <NavLink
+            href="/#project"
+            title={t("projectHeader")}
+            onClick={() => setShowMenu(false)}
+          />
+          <NavLink
+            href="/#game"
+            title={t("gameHeader")}
+            onClick={() => setShowMenu(false)}
+          />
+          <NavLink
+            href="/#didacticHelp"
+            title={t("didacticHelpHeader")}
+            onClick={() => setShowMenu(false)}
+          />
+          <NavLink
+            href="/#help"
+            title={t("contactHeader")}
+            onClick={() => setShowMenu(false)}
+          />
         </ul>
       </nav>
     </header>

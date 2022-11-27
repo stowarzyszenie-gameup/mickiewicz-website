@@ -30,7 +30,7 @@ const Layout = ({ children }: IProps) => {
       className={`${isMonochrome ? "dark" : ""} leading-normal`}
       style={isFontLarge ? { fontSize: "150%" } : { fontSize: "125%" }}
     >
-      <div className="fixed bottom-0 right-0 flex gap-4 bg-accent dark:bg-black dark:text-white">
+      <div className="fixed bottom-0 right-0 flex gap-4 bg-accent dark:bg-black dark:text-white z-50">
         <button
           onClick={() => setIsMonochrome(!isMonochrome)}
           className="w-12 h-12"
@@ -39,6 +39,11 @@ const Layout = ({ children }: IProps) => {
             icon={isMonochrome ? faEye : faEyeLowVision}
             size="1x"
           />
+          <span className="sr-only">
+            {isMonochrome
+              ? "Switch to standard theme"
+              : "Switch to high contrast theme  "}
+          </span>
         </button>
         <button
           onClick={() => setIsFontLarge(!isFontLarge)}

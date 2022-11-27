@@ -18,7 +18,7 @@ const Project = () => {
         <div className="hidden md:flex">
           <Image
             className="h-full"
-            src="/images/mickiewicz_lewy_color.png"
+            src="/images/mickiewicz.webp"
             alt=""
             width={700}
             height={1200}
