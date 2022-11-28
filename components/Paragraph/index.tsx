@@ -3,9 +3,10 @@ import { ThemeContext, ThemeContextType } from "../../context/theme";
 
 interface IProps {
   innerHtml: string;
+  customClasses?: string;
 }
 
-const Paragraph = ({ innerHtml }: IProps) => {
+const Paragraph = ({ innerHtml, customClasses }: IProps) => {
   const { isFontLarge, isMonochrome } = useContext(
     ThemeContext
   ) as ThemeContextType;
@@ -15,7 +16,9 @@ const Paragraph = ({ innerHtml }: IProps) => {
         isFontLarge
           ? "prose-lg sm:prose-xl lg:prose-2xl"
           : "prose-base sm:prose-lg lg:prose-xl"
-      } dark:prose-invert ${isMonochrome ? "text-white" : ""} text-left mb-4`}
+      } dark:prose-invert ${
+        isMonochrome ? "text-white" : ""
+      } text-left mb-4 ${customClasses}`}
       dangerouslySetInnerHTML={{
         __html: innerHtml,
       }}

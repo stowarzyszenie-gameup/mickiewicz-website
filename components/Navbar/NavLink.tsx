@@ -4,7 +4,7 @@ import React from "react";
 interface IProps {
   href: string;
   title: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const NavLink = ({ href, title, onClick }: IProps) => {

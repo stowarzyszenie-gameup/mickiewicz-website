@@ -19,7 +19,7 @@ const AuthorsSection = ({ title, people, customClass }: IProps) => {
       }
 `}
     >
-      <h4 className="font-serif uppercase">{title}</h4>
+      <h2 className="font-serif uppercase">{title}</h2>
       <ul className="font-serif list-none p-0">
         {people.map((person) =>
           person.name ? (

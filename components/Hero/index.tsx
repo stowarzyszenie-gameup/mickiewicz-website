@@ -44,11 +44,28 @@ const Hero = () => {
           />
         </div>
         <div className="prose">
-          <h2 className="mt-0 text-center dark:text-white">
+          <h1 className="mt-0 text-center dark:text-white">
             {t("heroHeader")}
-          </h2>
+          </h1>
           <Paragraph innerHtml={t("hero")} />
-          <p>STEAM + GPLAY</p>
+          <div className="flex">
+            <a
+              href="#"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label={t("steamLinkName")}
+            >
+              <Image src="/images/steam.webp" width={394} height={138} alt="" />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label={t("gplayLinkName")}
+            >
+              <Image src="/images/gplay.webp" width={394} height={138} alt="" />
+            </a>
+          </div>
         </div>
       </div>
     </section>

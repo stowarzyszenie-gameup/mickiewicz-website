@@ -89,11 +89,6 @@ const Navbar = () => {
             title={t("didacticHelpHeader")}
             onClick={() => setShowMenu(false)}
           />
-          <NavLink
-            href="/#help"
-            title={t("contactHeader")}
-            onClick={() => setShowMenu(false)}
-          />
         </ul>
       </nav>
     </header>

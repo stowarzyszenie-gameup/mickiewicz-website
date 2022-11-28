@@ -23,7 +23,7 @@ i18n.use(initReactI18next).init({
   resources,
   ns: ["common"],
   defaultNS: "common",
-  lng: "en",
+  lng: "pl",
   interpolation: {
     escapeValue: false, // react already safes from xss
   },

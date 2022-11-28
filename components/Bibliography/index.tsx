@@ -10,7 +10,7 @@ const Bibliography = () => {
   ) as ThemeContextType;
   return (
     <section
-      id="authors"
+      id="bibliography"
       className="bg-secondary dark:bg-secondaryDark w-11/12 font-serif text-black flex flex-col items-center"
     >
       <SectionHeader text={t("bibliographyHeader")} />

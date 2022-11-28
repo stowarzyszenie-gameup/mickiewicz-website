@@ -141,16 +141,17 @@ const Authors = () => {
         />
       </div>
       <div className="w-11/12">
-        <h4 className="text-black dark:text-white font-serif text-lg md:text-2xl xl:text-4xl xl:my-12 text-center mb-4">
+        <h3 className="text-black dark:text-white font-serif text-lg md:text-2xl xl:text-4xl xl:my-12 text-center mb-4">
           Gra została wyprodukowana przez Astrolabe Stories, gamingowy hub
           Stowarzyszenia Badania i Rozwoju Gier GameUP
-        </h4>
+        </h3>
         <div className="flex items-center gap-8 justify-center">
           <div className="w-1/4">
             <a
               href="https://www.astrolabestories.com/"
               target="_blank"
               rel="noreferrer noopener"
+              aria-label={t("astrolabeLinkName")}
             >
               {isMonochrome ? (
                 <Image
@@ -174,6 +175,7 @@ const Authors = () => {
               href="https://www.gameup.org.pl/"
               target="_blank"
               rel="noreferrer noopener"
+              aria-label={t("gameupLinkName")}
             >
               {isMonochrome ? (
                 <Image
