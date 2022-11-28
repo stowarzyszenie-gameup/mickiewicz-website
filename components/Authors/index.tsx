@@ -1,5 +1,7 @@
-import React from "react";
+import Image from "next/image";
+import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
+import { ThemeContext, ThemeContextType } from "../../context/theme";
 import SectionHeader from "../SectionHeader";
 import AuthorsSection from "./AuthorsSection";
 
@@ -107,21 +109,24 @@ const authors = [
       },
     ],
   },
-  {
-    title: "Web Developer",
-    people: [{ name: "Michał Hawełka", role: "" }],
-  },
 ];
 
 const Authors = () => {
   const { t } = useTranslation();
+  const { isFontLarge, isMonochrome } = useContext(
+    ThemeContext
+  ) as ThemeContextType;
   return (
     <section
       id="authors"
-      className="bg-white w-full flex flex-col items-center"
+      className="bg-white dark:bg-black w-full flex flex-col items-center pb-8"
     >
       <SectionHeader text={t("authorsHeader")} />
-      <div className="prose max-w-none grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+      <div
+        className={`prose dark:prose-invert max-w-none grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 bg-black dark:bg-white gap-x-px ${
+          isFontLarge ? "prose-xl" : ""
+        }`}
+      >
         {authors.map((section, index) => (
           <AuthorsSection
             key={`authors_${index}`}
@@ -129,7 +134,65 @@ const Authors = () => {
             people={section.people}
           />
         ))}
-        <h4></h4>
+        <AuthorsSection
+          title={"Web developer"}
+          people={[{ name: "Michał Hawełka", role: "" }]}
+          customClass="md:col-span-2 xl:col-span-1"
+        />
+      </div>
+      <div className="w-11/12">
+        <h4 className="text-black dark:text-white font-serif text-lg md:text-2xl xl:text-4xl xl:my-12 text-center mb-4">
+          Gra została wyprodukowana przez Astrolabe Stories, gamingowy hub
+          Stowarzyszenia Badania i Rozwoju Gier GameUP
+        </h4>
+        <div className="flex items-center gap-8 justify-center">
+          <div className="w-1/4">
+            <a
+              href="https://www.astrolabestories.com/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              {isMonochrome ? (
+                <Image
+                  src="/images/logos/astrolabe_white.webp"
+                  width={462}
+                  height={557}
+                  alt=""
+                />
+              ) : (
+                <Image
+                  src="/images/logos/astrolabe_black.webp"
+                  width={462}
+                  height={557}
+                  alt=""
+                />
+              )}
+            </a>
+          </div>
+          <div className="w-1/3">
+            <a
+              href="https://www.gameup.org.pl/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              {isMonochrome ? (
+                <Image
+                  src="/images/logos/gameup_white.webp"
+                  width={927}
+                  height={184}
+                  alt=""
+                />
+              ) : (
+                <Image
+                  src="/images/logos/gameup_black.webp"
+                  width={927}
+                  height={184}
+                  alt=""
+                />
+              )}
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

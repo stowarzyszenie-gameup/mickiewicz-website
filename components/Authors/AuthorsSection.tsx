@@ -8,21 +8,30 @@ export type Author = {
 interface IProps {
   title: string;
   people: Author[];
+  customClass?: string;
 }
 
-const AuthorsSection = ({ title, people }: IProps) => {
+const AuthorsSection = ({ title, people, customClass }: IProps) => {
   return (
-    <div>
+    <div
+      className={`bg-white dark:bg-black flex flex-col px-4 text-center ${
+        customClass ? customClass : ""
+      }
+`}
+    >
       <h4 className="font-serif uppercase">{title}</h4>
-      <ul className="font-serif list-none">
+      <ul className="font-serif list-none p-0">
         {people.map((person) =>
           person.name ? (
-            <li key={person.name} className="grid grid-cols-2">
-              <div>{person.name}</div>
-              <div>{person.role}</div>
+            <li key={person.name} className="p-0">
+              <div>
+                {person.name} {person.role ? `(${person.role})` : ""}
+              </div>
             </li>
           ) : (
-            <li key={person.alternative}>{person.alternative}</li>
+            <li key={person.alternative} className="p-0">
+              {person.alternative}
+            </li>
           )
         )}
       </ul>

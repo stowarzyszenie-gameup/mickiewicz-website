@@ -13,7 +13,7 @@ const DidacticHelp = () => {
       className="bg-secondary dark:bg-secondaryDark w-11/12 font-serif text-black flex flex-col items-center"
     >
       <SectionHeader text={t("didacticHelpHeader")} />
-      <div className="grid grid-cols-1 md:grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-3 xl:max-w-screen-xl">
         <div className="hidden md:flex">
           <Image src="/images/blazej.webp" width={1094} height={2093} alt="" />
         </div>

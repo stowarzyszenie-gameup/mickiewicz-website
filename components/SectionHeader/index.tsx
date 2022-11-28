@@ -11,7 +11,7 @@ const SectionHeader = ({ text }: IProps) => {
   ) as ThemeContextType;
   return (
     <h2
-      className={`text-center mt-4 text-2xl uppercase font-serif ${
+      className={`text-center my-8 text-2xl uppercase font-serif ${
         isMonochrome ? "text-white" : "text-black"
       }`}
     >
