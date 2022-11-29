@@ -40,9 +40,7 @@ const Layout = ({ children }: IProps) => {
             size="1x"
           />
           <span className="sr-only">
-            {isMonochrome
-              ? "Switch to standard theme"
-              : "Switch to high contrast theme"}
+            {isMonochrome ? t("standardTheme") : t("highContrastTheme")}
           </span>
         </button>
         <button
@@ -51,17 +49,13 @@ const Layout = ({ children }: IProps) => {
         >
           <FontAwesomeIcon icon={faFont} size={isFontLarge ? "1x" : "2x"} />
           <span className="sr-only">
-            {isFontLarge ? "Make the font smaller" : "Make the font larger"}
+            {isFontLarge ? t("smallerFont") : t("largerFont")}
           </span>
         </button>
         <button
           onClick={() => switchLanguage()}
           className="w-12 h-12"
-          aria-label={
-            i18n.language === "en"
-              ? "Switch language to Polish"
-              : "Zmień język na angielski"
-          }
+          aria-label={i18n.language === "en" ? t("langPl") : t("langEn")}
         >
           {i18n.language === "en" ? "PL" : "EN"}
         </button>

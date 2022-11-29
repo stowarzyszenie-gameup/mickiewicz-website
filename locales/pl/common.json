@@ -1,4 +1,6 @@
 {
+  "metaTitle": "Ballady i romanse - gra edukacyjna",
+  "metaDescription": "Jest rok 1822. Adam Mickiewicz szykuje się do wydania swojego literackiego debiutu. Już za chwilę świat pozna jego przełomowe Ballady i romanse. Wyrusz z poetą w podróż po jego wspomnieniach i dowiedz się, co przyczyniło się do powstania takich ballad, jak Świteź, Pierwiosnek czy Romantyczność.",
   "testText": "To jest testowy tekst",
   "gameName": "Ballady i romanse",
   "projectHeader": "Projekt",
@@ -65,5 +67,13 @@
   "mkidnLinkName": "Przejdź na stronę Ministerstwa Kultury i Dziedzictwa Narodowego",
   "steamLinkName": "Pobierz Ballady i Romanse ze Steam",
   "gplayLinkName": "Pobierz Ballady i Romanse z Google Play",
-  "footer": "Gra edukacyjna <em>Ballady i romanse</em> powstała we współpracy z Ministerstwem Kultury i Dziedzictwa Narodowego."
+  "footer": "Gra edukacyjna <em>Ballady i romanse</em> powstała we współpracy z Ministerstwem Kultury i Dziedzictwa Narodowego.",
+  "producers": "Gra została wyprodukowana przez Astrolabe Stories, gamingowy hub Stowarzyszenia Badania i Rozwoju Gier GameUP",
+  "openNav": "Otwórz menu nawigacyjne",
+  "standardTheme": "Zmień na standardową paletę barw",
+  "highContrastTheme": "Zmień na wysoki kontrast",
+  "largerFont": "Zwiększ rozmiar tekstu",
+  "smallerFont": "Zmniejsz rozmiar tekstu",
+  "langPl": "Zmień język strony na polski",
+  "langEn": "Zmień język strony na angielski"
 }

@@ -1,4 +1,6 @@
 {
+  "metaTitle": "Ballads & romances - educational game",
+  "metaDescription": "The year is 1822. Adam Mickiewicz is preparing to publish his literary debut. In a moment, the world will know his groundbreaking <em>Ballads & romances</em>. Go with the poet on a journey through his memories and find out what contributed to the creation of such ballads as Świteź, Primrose, or Romanticism.",
   "testText": "This is a test text",
   "gameName": "Ballads & romances",
   "projectHeader": "Project",
@@ -65,5 +67,13 @@
   "mkidnLinkName": "Open Ministry of Culture and National Heritage's website",
   "steamLinkName": "Get Ballads & Romances on Steam",
   "gplayLinkName": "Get Ballads & Romances on Google Play",
-  "footer": "Educational game <em>Ballads & romances</em> was created in cooperation with Ministry of Culture and National Heritage."
+  "footer": "Educational game <em>Ballads & romances</em> was created in cooperation with Ministry of Culture and National Heritage.",
+  "producers": "The game was developed by Astrolabe Stories - the gaming hub of Game Research and Development Association GameUP.",
+  "openNav": "Open main navigation menu",
+  "standardTheme": "Switch to standard theme",
+  "highContrastTheme": "Switch to high contrast theme",
+  "largerFont": "Make the font larger",
+  "smallerFont": "Make the font smaller",
+  "langPl": "Switch language to Polish",
+  "langEn": "Switch language to English"
 }

@@ -142,8 +142,7 @@ const Authors = () => {
       </div>
       <div className="w-11/12">
         <h3 className="text-black dark:text-white font-serif text-lg md:text-2xl xl:text-4xl xl:my-12 text-center mb-4">
-          Gra została wyprodukowana przez Astrolabe Stories, gamingowy hub
-          Stowarzyszenia Badania i Rozwoju Gier GameUP
+          {t("producers")}
         </h3>
         <div className="flex items-center gap-8 justify-center">
           <div className="w-1/4">

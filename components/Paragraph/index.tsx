@@ -17,7 +17,7 @@ const Paragraph = ({ innerHtml, customClasses }: IProps) => {
           ? "prose-lg sm:prose-xl lg:prose-2xl"
           : "prose-base sm:prose-lg lg:prose-xl"
       } dark:prose-invert ${
-        isMonochrome ? "text-white" : ""
+        isMonochrome ? "text-white" : "text-black"
       } text-left mb-4 ${customClasses}`}
       dangerouslySetInnerHTML={{
         __html: innerHtml,

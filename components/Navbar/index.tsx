@@ -47,7 +47,7 @@ const Navbar = () => {
         aria-expanded="false"
         onClick={() => setShowMenu(!showMenu)}
       >
-        <span className="sr-only">Open main menu</span>
+        <span className="sr-only">{t("openNav")}</span>
         <svg
           className="w-6 h-6"
           aria-hidden="true"

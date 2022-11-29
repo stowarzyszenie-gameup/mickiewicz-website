@@ -4,7 +4,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class MickiewiczDocument extends Document {
   render() {
     return (
-      <Html className="scroll-smooth" lang="pl">
+      <Html className="scroll-smooth">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link

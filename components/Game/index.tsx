@@ -14,7 +14,7 @@ const Game = () => {
   return (
     <section
       id="game"
-      className="bg-primary dark:bg-accentDark w-full flex flex-col items-center "
+      className="bg-primary dark:bg-accentDark w-full flex flex-col items-center text-black dark:text-white "
     >
       <SectionHeader text={t("gameHeader")} />
       <div

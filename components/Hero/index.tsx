@@ -11,7 +11,7 @@ const Hero = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <section className="bg-white dark:bg-accentDark w-full font-serif text-black flex flex-col items-center py-4">
+    <section className="bg-white dark:bg-accentDark w-full font-serif text-black dark:text-white flex flex-col items-center py-4">
       <div
         className={`flex flex-col gap-4 xl:gap-8 xl:flex-row justify-start md:justify-center items-center max-w-full h-auto w-full col-span-2 ${
           isFontLarge
