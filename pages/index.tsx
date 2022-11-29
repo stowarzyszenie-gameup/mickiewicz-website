@@ -25,7 +25,7 @@ const Home: NextPage = () => {
         <meta name="description" content={t("metaDescription")} />
         <meta property="og:title" content={t("metaTitle")} />
         <meta property="og:description" content={t("metaDescription")} />
-        <meta property="og:url" content="https://balladyiromanse.pl" />
+        <meta property="og:url" content="https://balladyiromanse.com.pl" />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
