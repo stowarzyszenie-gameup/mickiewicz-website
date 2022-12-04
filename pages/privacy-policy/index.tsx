@@ -16,10 +16,9 @@ const PrivacyPolicy: NextPage = () => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="language" content={i18n.language} />
-        <title>{t("metaTitle")}</title>
+        <title>{t("metaPrivacyTitle")}</title>
         <meta name="description" content={t("metaDescription")} />
-        <meta property="og:title" content={t("metaTitle")} />
-        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="og:title" content={t("metaPrivacyTitle")} />
         <link rel="icon" href="/favicon.ico" />
         <meta name="rating" content="safe for kids" />
         <meta name="copyright" content="Copyright 2022 Astrolabe Stories" />
