@@ -54,6 +54,7 @@ const Footer = () => {
           <NavLink href="/#project" title={t("projectHeader")} />
           <NavLink href="/#game" title={t("gameHeader")} />
           <NavLink href="/#didacticHelp" title={t("didacticHelpHeader")} />
+          <NavLink href="/privacy-policy" title={t("privacyPolicyHeader")} />
         </ul>
       </nav>
       <Paragraph
