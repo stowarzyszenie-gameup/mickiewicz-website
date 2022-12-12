@@ -50,21 +50,21 @@ const Hero = () => {
           <Paragraph innerHtml={t("hero")} />
           <div className="flex">
             <a
-              href="#"
+              href="https://store.steampowered.com/app/2230080/Ballads_and_Romances/"
               target="_blank"
               rel="noreferrer noopener"
               aria-label={t("steamLinkName")}
             >
               <Image src="/images/steam.webp" width={394} height={138} alt="" />
             </a>
-            <a
+            {/* <a
               href="#"
               target="_blank"
               rel="noreferrer noopener"
               aria-label={t("gplayLinkName")}
             >
               <Image src="/images/gplay.webp" width={394} height={138} alt="" />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
