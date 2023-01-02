@@ -57,14 +57,14 @@ const Hero = () => {
             >
               <Image src="/images/steam.webp" width={394} height={138} alt="" />
             </a>
-            {/* <a
-              href="#"
+            <a
+              href="https://play.google.com/store/apps/details?id=com.AstrolabeStories.BalladsandRomances"
               target="_blank"
               rel="noreferrer noopener"
               aria-label={t("gplayLinkName")}
             >
               <Image src="/images/gplay.webp" width={394} height={138} alt="" />
-            </a> */}
+            </a>
           </div>
         </div>
       </div>
