@@ -88,7 +88,9 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <p className="font-serif text-sm">Astrolabe Stories © 2022</p>
+      <p className="font-serif text-sm">
+        Astrolabe Stories © {new Date().getFullYear()}
+      </p>
     </footer>
   );
 };
